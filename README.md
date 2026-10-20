@@ -47,8 +47,8 @@ Después, la biblioteca (33 de los 54 ejercicios; el resto «en la app») y la l
    `CONFIG.contactEmail` = `biak@biakfit.com`. El buzón tiene que existir (iCloud+ con dominio propio) antes de publicar.
 2. **DNS del correo (iCloud+).** En Squarespace: MX `mx01.mail.icloud.com` y `mx02.mail.icloud.com` (prioridad 10),
    TXT de verificación de Apple, TXT SPF `v=spf1 include:icloud.com ~all` y CNAME DKIM `sig1._domainkey`.
-3. **Legal.** `privacidad.html` y `aviso-legal.html` (ES/EU/EN, prevalece el castellano). Titular: Alberto Conde Mellado.
-   Antes de publicar, rellenar los huecos marcados en amarillo: `[NIF]` y `[Domicilio]` (los pide el art. 10 de la LSSI).
+3. **Legal.** `privacidad.html` y `aviso-legal.html` (ES/EU/EN, prevalece el castellano). Titular: Alberto Conde Mellado
+   (NIF y domicilio incluidos, art. 10 de la LSSI).
 4. **Idiomas.** ES, EU y EN, en el objeto `T` de `assets/app.js`. El euskera usa la terminología de `lib/l10n/app_eu.arb` de la app
    (ibilbidea, saioa, maila, domina, bolada, Errazegia / Erronka handia / Ezin izan dut…). El idioma se elige por el
    navegador y se recuerda en el dispositivo.
