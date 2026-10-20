@@ -33,8 +33,8 @@ ritmo del scroll y, cuando paras, se pone a entrenar. Cada mundo enseña una ide
 
 | Mundo | Mensaje | Demo |
 |---|---|---|
-| 1 Valle | Con lo que tienes en casa | Eliges tu material y Draki hace un ejercicio que puedes hacer; cuenta real de ejercicios disponibles |
-| 2 Río | Sin cronómetro. Sin culpa | «Hoy no he podido»: la sesión pasa al siguiente día de entreno |
+| 1 Valle | Donde tú elijas (casa o gimnasio) | Eliges tu material y Draki hace un ejercicio que puedes hacer; cuenta real de ejercicios disponibles |
+| 2 Río | Una aventura sin presiones | «Hoy no he podido»: la sesión pasa al siguiente día de entreno |
 | 3 Montaña | Tu coach te escucha | Muy fácil / Retador / No he podido, con pesas rusas reales (8-12-16-20) y la regla del salto >15 % |
 | 4 Nieve | Tu progreso, en Draki | Mapa muscular frente/espalda con giro 3D |
 | 5 Volcán | Cada tres sesiones, un nivel | Anillo de 3 sesiones, medalla y celebración |
