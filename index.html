@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BiakFit</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="BiakFit: la app de fuerza que monta tu plan con el material que tienes en casa. Sin cronómetro, a tu ritmo y con Draki a tu lado. Entrenamos juntos.">
+<meta name="theme-color" content="#14B4A4">
+<meta property="og:title" content="BiakFit · Entrenamos juntos">
+<meta property="og:description" content="La app de fuerza que monta tu plan con el material que tienes. Sin cronómetro y sin culpa, con Draki a tu lado.">
+<meta property="og:image" content="https://biakfit.com/assets/img/brand/og.png">
+<meta property="og:url" content="https://biakfit.com/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/img/brand/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/brand/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/baloo-2-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<canvas id="sparks" aria-hidden="true"></canvas>
+
+<header class="bar" id="bar">
+  <div class="bar-in">
+    <a class="bar-logo" href="#top" aria-label="BiakFit, inicio">
+      <img class="logo-day" src="assets/img/brand/biakfit_logo_horizontal_color.svg" alt="BiakFit" width="110" height="40">
+      <img class="logo-night" src="assets/img/brand/biakfit_logo_horizontal_white.svg" alt="" width="110" height="40">
+    </a>
+    <nav class="bar-nav" aria-label="Secciones">
+      <a href="#viaje" data-i18n="nav.journey">El viaje</a>
+      <a href="#biblioteca" data-i18n="nav.library">Ejercicios</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button type="button" data-lang="es" aria-pressed="true">ES</button>
+      <button type="button" data-lang="eu" aria-pressed="false">EU</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn btn-primary btn-sm" href="#beta" data-i18n="nav.cta">Quiero probarla</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO: «Bi · Draki · ak». Draki parte la palabra en dos -->
+  <section class="hero" id="top">
+    <div class="hero-word" aria-hidden="true">
+      <span class="hw hw-l">Bi</span>
+      <span class="hero-stage">
+        <button type="button" class="hero-draki" id="heroDraki" data-i18n-aria="hero.tap" aria-label="Toca a Draki">
+          <span class="flip" id="heroFlip"></span>
+        </button>
+      </span>
+      <span class="hw hw-r">ak</span>
+    </div>
+    <h1 class="sr-only">BiakFit</h1>
+    <p class="hero-ex" aria-live="polite"><span id="heroExName"></span></p>
+    <div class="hero-copy">
+      <p class="hero-def" data-i18n="hero.def">En euskera, «biak» significa «los dos».</p>
+      <p class="hero-lema" data-i18n="hero.lema">Tú y Draki. Entrenamos juntos.</p>
+      <p class="hero-sub" data-i18n="hero.sub">BiakFit es la app de fuerza que monta tu plan con el material que tienes en casa. Sin cronómetro, a tu ritmo y sin culpa.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#beta" data-i18n="hero.cta1">Quiero probarla</a>
+        <a class="btn btn-ghost" href="#prologo" data-i18n="hero.cta2">Empieza el viaje</a>
+      </div>
+      <p class="hero-soon" data-i18n="hero.soon">Primero en iPhone. Android, después.</p>
+    </div>
+  </section>
+
+  <!-- PRÓLOGO: el texto se enciende palabra a palabra al hacer scroll -->
+  <section class="prologue" id="prologo">
+    <p class="prologue-text" id="prologueText" data-i18n="prologue">Draki es un dragón pequeño con un plan grande: volver a su volcán. El camino cruza un valle, un río, una montaña y la nieve. Solo se cansa. Contigo avanza. Cada sesión que haces es un paso suyo, y si un día no puedes, te espera en el camino.</p>
+    <p class="prologue-hint" data-i18n="prologue.hint">Baja y camina con él.</p>
+  </section>
+
+  <!-- EL VIAJE: la página es el mapa. Draki recorre el sendero al ritmo del scroll -->
+  <section class="journey" id="viaje" aria-label="El viaje de Draki">
+    <div class="trail" id="trail" aria-hidden="true">
+      <div class="trail-maps">
+        <img src="assets/img/world/world_1.webp" alt="" width="900" height="1950">
+        <img src="assets/img/world/world_2.webp" alt="" width="900" height="1950" loading="lazy">
+        <img src="assets/img/world/world_3.webp" alt="" width="900" height="1950" loading="lazy">
+        <img src="assets/img/world/world_4.webp" alt="" width="900" height="1950" loading="lazy">
+        <img src="assets/img/world/world_5.webp" alt="" width="900" height="1950" loading="lazy">
+      </div>
+      <svg class="trail-path" id="trailSvg"><path id="pathTodo" class="p-todo"></path><path id="pathDone" class="p-done"></path></svg>
+      <div id="nodes"></div>
+      <div class="walker" id="walker">
+        <div class="walker-bubble" id="walkerBubble"></div>
+        <div class="walker-body" id="walkerBody">
+          <img class="walker-pose" id="walkerPose" src="assets/img/draki/warmup.webp" alt="">
+          <span class="flip walker-ex" id="walkerEx"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mundo 1 · Valle -->
+    <article class="world" data-world="0" id="valle">
+      <div class="world-band" aria-hidden="true"></div>
+      <div class="world-copy">
+        <p class="world-kicker"><span>Mundo 1</span> <b>Valle</b></p>
+        <h2 data-i18n="w1.title">Con lo que tienes en casa.</h2>
+        <p data-i18n="w1.body">Dile a BiakFit qué material tienes y el plan sale de ahí. Mancuernas, una pesa rusa, una barra o nada: todo vale. Las cargas se redondean a los pesos que de verdad puedes montar.</p>
+      </div>
+      <div class="world-widget">
+        <div class="panel kit">
+          <p class="panel-q" data-i18n="w1.q">¿Qué tienes en casa?</p>
+          <div class="chips" id="kitChips"></div>
+          <div class="kit-stage"><span class="flip" id="kitFlip"></span></div>
+          <p class="kit-name" id="kitName"></p>
+          <p class="kit-cue" id="kitCue"></p>
+          <div class="kit-foot">
+            <p class="kit-count"><b id="kitCount">0</b> <span data-i18n="w1.count">ejercicios para ti</span></p>
+            <button type="button" class="btn btn-small" id="kitNext" data-i18n="w1.next">Otro ejercicio</button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Mundo 2 · Río -->
+    <article class="world flipside" data-world="1" id="rio">
+      <div class="world-band" aria-hidden="true"></div>
+      <div class="world-copy">
+        <p class="world-kicker"><span>Mundo 2</span> <b>Río</b></p>
+        <h2 data-i18n="w2.title">Sin cronómetro. Sin culpa.</h2>
+        <p data-i18n="w2.body">No hay reloj contando segundos. Ves tus series, las haces y marcas la sesión. ¿Hoy no has podido? La sesión no se pierde: pasa a tu siguiente día de entreno.</p>
+      </div>
+      <div class="world-widget">
+        <div class="panel week">
+          <div class="week-head">
+            <img class="week-draki" id="weekDraki" src="assets/img/draki/encouraging.webp" alt="" width="84" height="84">
+            <p class="week-msg" id="weekMsg" aria-live="polite"></p>
+          </div>
+          <div class="week-strip" id="weekStrip"></div>
+          <p class="week-count" id="weekCount"></p>
+          <div class="week-actions" id="weekActions">
+            <button type="button" class="btn btn-small btn-quiet" id="weekSkip" data-i18n="w2.skip">Hoy no he podido</button>
+            <button type="button" class="btn btn-small btn-primary" id="weekDone" data-i18n="w2.done">Sesión hecha</button>
+            <button type="button" class="btn btn-small btn-quiet" id="weekReset" data-i18n="w2.reset" hidden>Volver a empezar</button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Mundo 3 · Montaña -->
+    <article class="world" data-world="2" id="montana">
+      <div class="world-band" aria-hidden="true"></div>
+      <div class="world-copy">
+        <p class="world-kicker"><span>Mundo 3</span> <b>Montaña</b></p>
+        <h2 data-i18n="w3.title">Tu coach te escucha.</h2>
+        <p data-i18n="w3.body">Al terminar, dile qué tal cada ejercicio. BiakFit ajusta la carga sin saltos que no puedas mover. Repetir el mismo peso varias semanas es lo normal: así se gana fuerza.</p>
+      </div>
+      <div class="world-widget">
+        <div class="panel coach">
+          <div class="coach-top">
+            <span class="flip coach-flip" id="coachFlip"></span>
+            <div class="coach-info">
+              <p class="coach-name" id="coachName"></p>
+              <p class="coach-load"><span id="coachSets">3 × 12</span><span class="coach-kg"><span class="roll" id="coachKg">16</span> kg</span></p>
+              <img class="coach-face" id="coachFace" src="assets/img/draki/thinking.webp" alt="" width="64" height="64">
+            </div>
+          </div>
+          <div class="coach-bells" id="coachBells" aria-label="Tus pesas rusas"></div>
+          <p class="panel-q" data-i18n="w3.q">¿Qué tal ha ido?</p>
+          <div class="coach-btns">
+            <button type="button" class="btn btn-small" data-fb="easy" data-i18n="w3.easy">Muy fácil</button>
+            <button type="button" class="btn btn-small" data-fb="ok" data-i18n="w3.ok">Retador</button>
+            <button type="button" class="btn btn-small" data-fb="hard" data-i18n="w3.hard">No he podido</button>
+          </div>
+          <p class="coach-msg" id="coachMsg" aria-live="polite"></p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Mundo 4 · Nieve -->
+    <article class="world flipside" data-world="3" id="nieve">
+      <div class="world-band" aria-hidden="true"></div>
+      <div class="world-copy">
+        <p class="world-kicker"><span>Mundo 4</span> <b>Nieve</b></p>
+        <h2 data-i18n="w4.title">Tu progreso, en Draki.</h2>
+        <p data-i18n="w4.body">El mapa muscular de Draki se colorea con lo que entrenas. Y la racha cuenta semanas cumplidas, no kilos, porque la constancia es lo que te cambia.</p>
+      </div>
+      <div class="world-widget">
+        <div class="panel panel-dark muscles">
+          <div class="mm" id="mm">
+            <div class="mm-card" id="mmCard">
+              <div class="mm-face mm-front" id="mmFront"></div>
+              <div class="mm-face mm-back" id="mmBack"></div>
+            </div>
+          </div>
+          <div class="mm-side">
+            <p class="panel-q" data-i18n="w4.q">Toca un ejercicio</p>
+            <div class="chips chips-col" id="mmChips"></div>
+            <button type="button" class="btn btn-small btn-turn" id="mmTurn"><span class="turn-ico" aria-hidden="true">↻</span> <span data-i18n="w4.turn">Date la vuelta</span></button>
+            <p class="mm-legend"><span><i class="lg lg-p"></i><span data-i18n="w4.primary">Principal</span></span><span><i class="lg lg-s"></i><span data-i18n="w4.secondary">Secundario</span></span></p>
+          </div>
+          <div class="streak">
+            <span class="streak-flame" aria-hidden="true"></span>
+            <p><b>4</b> <span data-i18n="w4.streak">semanas de racha</span> <small data-i18n="w4.example">(ejemplo)</small></p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Mundo 5 · Volcán -->
+    <article class="world" data-world="4" id="volcan">
+      <div class="world-band" aria-hidden="true"></div>
+      <div class="world-copy">
+        <p class="world-kicker"><span>Mundo 5</span> <b>Volcán</b></p>
+        <h2 data-i18n="w5.title">Cada tres sesiones, un nivel.</h2>
+        <p data-i18n="w5.body">Tu plan es un viaje de cinco mundos. Cada sesión cierra un tramo del anillo, cada nivel te da una medalla y al final Draki llega a su volcán. Después, otro viaje.</p>
+      </div>
+      <div class="world-widget">
+        <div class="panel level">
+          <div class="level-ring-wrap">
+            <svg class="level-ring" id="levelRing" viewBox="0 0 120 120" aria-hidden="true"></svg>
+            <img class="level-medal" id="levelMedal" src="assets/img/obs/medal_level.webp" alt="" width="96" height="96">
+            <span class="level-left" id="levelLeft">3</span>
+          </div>
+          <p class="level-title" id="levelTitle" aria-live="polite"></p>
+          <p class="level-sub" id="levelSub"></p>
+          <button type="button" class="btn btn-primary btn-small" id="levelBtn" data-i18n="w5.btn">Completar sesión</button>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- BIBLIOTECA: un vistazo, no todo -->
+  <section class="library" id="biblioteca">
+    <div class="lib-head">
+      <h2 data-i18n="lib.title">Más de 50 ejercicios, y Draki te enseña cada uno.</h2>
+      <p data-i18n="lib.body">Cada ejercicio tiene su animación y sus claves técnicas, con variantes para barra, mancuernas, pesa rusa o tu propio peso. Aquí tienes unos cuantos. El resto te espera en la app.</p>
+    </div>
+    <div class="marquee" id="marqueeA"></div>
+    <div class="marquee marquee-rev" id="marqueeB"></div>
+  </section>
+
+  <!-- BETA -->
+  <section class="beta" id="beta">
+    <div class="beta-in">
+      <img class="beta-draki" src="assets/img/draki/trophy.webp" alt="Draki con un trofeo delante de su volcán" width="300" height="300" loading="lazy">
+      <div class="beta-copy">
+        <h2 data-i18n="beta.title">Entrena con Draki antes que nadie.</h2>
+        <p data-i18n="beta.body">Estamos terminando la beta para iPhone. Déjanos tu email y te avisamos en cuanto abra.</p>
+        <div class="beta-actions">
+          <a class="btn btn-primary" id="betaMail" href="mailto:biak@biakfit.com" data-i18n="beta.btn">Avisadme</a>
+        </div>
+        <p class="beta-alt"><span data-i18n="beta.alt">¿No se abre tu correo? Escríbenos a</span> <span class="beta-addr" id="betaAddr">biak@biakfit.com</span> <button type="button" class="btn btn-small btn-quiet" id="betaCopy" data-i18n="beta.copy">Copiar</button></p>
+        <p class="beta-small"><span data-i18n="beta.privacy">Solo usaremos tu email para avisarte del lanzamiento.</span> <a href="privacidad.html" data-i18n="beta.more">Política de privacidad</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-in">
+    <img src="assets/img/brand/biakfit_logo_stacked_white.svg" alt="BiakFit" width="120" height="96" loading="lazy">
+    <p class="foot-lema" data-i18n="foot.lema">Entrenamos juntos.</p>
+    <p class="foot-legal"><span data-i18n="foot.legal">© 2026 Alberto Conde Mellado. Hecho en Donostia.</span></p>
+    <p class="foot-links"><a href="privacidad.html" data-i18n="foot.privacy">Privacidad</a> <a href="aviso-legal.html" data-i18n="foot.notice">Aviso legal</a> <a href="aviso-legal.html#ejercicio" data-i18n="foot.safety">Entrena con seguridad</a></p>
+  </div>
+</footer>
+
+<script src="assets/exercises.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
