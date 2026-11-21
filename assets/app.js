@@ -8,7 +8,8 @@
   // visitante con el asunto y el texto ya escritos; solo tiene que enviarlo.
   // ---------------------------------------------------------------------------
   var CONFIG = {
-    contactEmail: 'biak@biakfit.com'
+    contactEmail: 'biak@biakfit.com',
+    appStoreUrl: 'https://apps.apple.com/app/biakfit/id6824788308'
   };
 
   var $ = function (s, r) { return (r || document).querySelector(s); };
@@ -36,12 +37,12 @@
   // ---------------------------------------------------------------------------
   var T = {
     es: {
-      'nav.journey': 'El viaje', 'nav.library': 'Ejercicios', 'nav.cta': 'Quiero probarla',
+      'nav.journey': 'El viaje', 'nav.library': 'Ejercicios', 'nav.cta': 'Descárgala',
       'hero.def': 'En euskera, «biak» significa «los dos».',
       'hero.lema': 'Tú y Draki. Entrenamos juntos.',
       'hero.sub': 'BiakFit es la app de fuerza que convierte tu entrenamiento en una aventura sin presiones. En casa con lo que tengas o en el gimnasio: el lugar lo eliges tú, y Draki siempre está listo para ser la otra mitad de «biak».',
-      'hero.cta1': 'Quiero probarla', 'hero.cta2': 'Empieza el viaje',
-      'hero.soon': 'Primero en iPhone. Android, después.',
+      'hero.cta1': 'Descárgala gratis', 'hero.cta2': 'Empieza el viaje',
+      'hero.soon': 'Ya en la App Store para iPhone. Android, después.',
       'hero.tap': 'Toca a Draki para cambiar de ejercicio',
       'prologue': 'Draki es un dragón pequeño con un plan grande: volver a su volcán. El camino cruza un valle, un río, una montaña y la nieve. Solo se cansa. Contigo avanza. Cada sesión que haces es un paso suyo, y si un día no puedes, te espera en el camino.',
       'prologue.hint': 'Baja y camina con él.',
@@ -84,21 +85,21 @@
       'lib.title': 'Más de 50 ejercicios, y Draki te enseña cada uno.',
       'lib.body': 'Cada ejercicio tiene su animación y sus claves técnicas, con variantes para barra, mancuernas, pesa rusa o tu propio peso. Aquí tienes unos cuantos. El resto te espera en la app.',
       'lib.more': 'en la app',
-      'beta.title': 'Entrena con Draki antes que nadie.',
-      'beta.body': 'Estamos terminando la beta para iPhone. Pulsa el botón, envía el correo que se abre y te avisamos en cuanto esté lista.',
-      'beta.subject': 'Quiero probar BiakFit', 'beta.btn': 'Avisadme',
+      'beta.title': 'Draki ya te espera.',
+      'beta.body': 'BiakFit ya está en la App Store para iPhone. Descárgala gratis y empezad el viaje juntos.',
+      'beta.subject': 'Quiero probar BiakFit', 'beta.btn': 'Descargar en la App Store',
       'beta.mailBody': 'Hola, estoy interesado en probar BiakFit. Avisadme cuando abra la beta.',
-      'beta.alt': '¿No se abre tu correo? Escríbenos a', 'beta.copy': 'Copiar', 'beta.copied': 'Copiado',
+      'beta.alt': '¿Dudas o ideas? Escríbenos a', 'beta.copy': 'Copiar', 'beta.copied': 'Copiado',
       'beta.privacy': 'Solo usaremos tu email para avisarte del lanzamiento.',
       'foot.lema': 'Entrenamos juntos.', 'foot.legal': '© 2026 Alberto Conde Mellado. Hecho en Donostia.', 'foot.privacy': 'Privacidad', 'foot.notice': 'Aviso legal', 'foot.safety': 'Entrena con seguridad', 'beta.more': 'Política de privacidad'
     },
     eu: {
-      'nav.journey': 'Ibilbidea', 'nav.library': 'Ariketak', 'nav.cta': 'Probatu nahi dut',
+      'nav.journey': 'Ibilbidea', 'nav.library': 'Ariketak', 'nav.cta': 'Deskargatu',
       'hero.def': 'Izenak dena dio: biak.',
       'hero.lema': 'Zu eta Draki. Elkarrekin entrenatzen dugu.',
       'hero.sub': 'BiakFit indar-entrenamendurako aplikazioa da, eta zure entrenamendua presiorik gabeko abentura bihurtzen du. Etxean daukazunarekin edo gimnasioan: lekua zuk aukeratzen duzu, eta Draki beti prest dago «biak»-en beste erdia izateko.',
-      'hero.cta1': 'Probatu nahi dut', 'hero.cta2': 'Hasi ibilbidea',
-      'hero.soon': 'Lehenik iPhonen. Gero, Androiden.',
+      'hero.cta1': 'Deskargatu doan', 'hero.cta2': 'Hasi ibilbidea',
+      'hero.soon': 'App Storen dago orain, iPhonerako. Gero, Androiden.',
       'hero.tap': 'Sakatu Draki ariketaz aldatzeko',
       'prologue': 'Draki herensuge txiki bat da, asmo handi batekin: bere sumendira itzultzea. Bideak haran bat, ibai bat, mendi bat eta elurra zeharkatzen ditu. Bakarrik, nekatu egiten da. Zurekin, aurrera egiten du. Egiten duzun saio bakoitza urrats bat da beretzat, eta egunen batean ezin baduzu, bidean zain izango duzu.',
       'prologue.hint': 'Jaitsi eta ibili berarekin.',
@@ -141,22 +142,22 @@
       'lib.title': '50 ariketa baino gehiago, eta Drakik denak erakusten dizkizu.',
       'lib.body': 'Ariketa bakoitzak bere animazioa eta gako teknikoak ditu, barrarekin, mankuernekin, kettlebellarekin edo gorputz-pisuarekin egiteko aldaerekin. Hona hemen batzuk. Gainerakoak aplikazioan dituzu zain.',
       'lib.more': 'aplikazioan',
-      'beta.title': 'Entrenatu Drakirekin beste inork baino lehen.',
-      'beta.body': 'iPhonerako beta amaitzen ari gara. Sakatu botoia, bidali irekitzen den mezua eta prest dagoenean abisatuko dizugu.',
-      'beta.subject': 'BiakFit probatu nahi dut', 'beta.btn': 'Abisatu',
+      'beta.title': 'Draki zure zain dago.',
+      'beta.body': 'BiakFit App Storen dago orain, iPhonerako. Deskargatu doan eta hasi ibilbidea elkarrekin.',
+      'beta.subject': 'BiakFit probatu nahi dut', 'beta.btn': 'Deskargatu App Storen',
       'beta.mailBody': 'Kaixo, BiakFit probatzeko interesa dut. Abisatu beta irekitzen denean.',
-      'beta.alt': 'Ez da posta irekitzen? Idatzi helbide honetara:', 'beta.copy': 'Kopiatu', 'beta.copied': 'Kopiatuta',
+      'beta.alt': 'Zalantzarik edo ideiarik? Idatzi helbide honetara:', 'beta.copy': 'Kopiatu', 'beta.copied': 'Kopiatuta',
       'beta.privacy': 'Zure emaila abiaraztearen berri emateko baino ez dugu erabiliko.',
       'walk.home': 'Etxean!',
       'foot.lema': 'Elkarrekin entrenatzen dugu.', 'foot.legal': '© 2026 Alberto Conde Mellado. Donostian egina.', 'foot.privacy': 'Pribatutasuna', 'foot.notice': 'Lege-oharra', 'foot.safety': 'Entrenatu seguru', 'beta.more': 'Pribatutasun-politika'
     },
     en: {
-      'nav.journey': 'The journey', 'nav.library': 'Exercises', 'nav.cta': 'I want to try it',
+      'nav.journey': 'The journey', 'nav.library': 'Exercises', 'nav.cta': 'Download it',
       'hero.def': 'In Basque, “biak” means “the two of us”.',
       'hero.lema': 'You and Draki. Training together.',
       'hero.sub': 'BiakFit is the strength app that turns your training into an adventure with no pressure. At home with whatever you have or at the gym: you choose the place, and Draki is always ready to be the other half of “biak”.',
-      'hero.cta1': 'I want to try it', 'hero.cta2': 'Start the journey',
-      'hero.soon': 'iPhone first. Android next.',
+      'hero.cta1': 'Download it free', 'hero.cta2': 'Start the journey',
+      'hero.soon': 'Now on the App Store for iPhone. Android next.',
       'hero.tap': 'Tap Draki to switch exercise',
       'prologue': 'Draki is a small dragon with a big plan: getting back to his volcano. The path crosses a valley, a river, a mountain and the snow. Alone, he gets tired. With you, he keeps going. Every session you do is a step for him, and if one day you can’t make it, he waits for you on the path.',
       'prologue.hint': 'Scroll down and walk with him.',
@@ -199,11 +200,11 @@
       'lib.title': '50+ exercises, and Draki shows you every one.',
       'lib.body': 'Every exercise has its own animation and technique cues, with variations for barbell, dumbbells, kettlebell or bodyweight. Here are a few. The rest are waiting in the app.',
       'lib.more': 'in the app',
-      'beta.title': 'Train with Draki before anyone else.',
-      'beta.body': 'We’re finishing the iPhone beta. Tap the button, send the email that opens and we’ll let you know as soon as it’s ready.',
-      'beta.subject': 'I want to try BiakFit', 'beta.btn': 'Let me know',
+      'beta.title': 'Draki is waiting for you.',
+      'beta.body': 'BiakFit is now on the App Store for iPhone. Download it free and start the journey together.',
+      'beta.subject': 'I want to try BiakFit', 'beta.btn': 'Download on the App Store',
       'beta.mailBody': 'Hi, I’m interested in trying BiakFit. Let me know when the beta opens.',
-      'beta.alt': 'Mail app didn’t open? Write to', 'beta.copy': 'Copy', 'beta.copied': 'Copied',
+      'beta.alt': 'Questions or ideas? Write to', 'beta.copy': 'Copy', 'beta.copied': 'Copied',
       'beta.privacy': 'We’ll only use your email to tell you about the launch.',
       'foot.lema': 'Training together.', 'foot.legal': '© 2026 Alberto Conde Mellado. Made in Donostia.', 'foot.privacy': 'Privacy', 'foot.notice': 'Legal notice', 'foot.safety': 'Train safely', 'beta.more': 'Privacy policy'
     }
@@ -769,8 +770,7 @@
   // Beta
   // ---------------------------------------------------------------------------
   function renderBeta() {
-    var href = 'mailto:' + CONFIG.contactEmail + '?subject=' + encodeURIComponent(t('beta.subject')) + '&body=' + encodeURIComponent(t('beta.mailBody'));
-    $('#betaMail').setAttribute('href', href);
+    $('#betaMail').setAttribute('href', CONFIG.appStoreUrl);
     $('#betaAddr').textContent = CONFIG.contactEmail;
   }
   $('#betaCopy').addEventListener('click', function (e) {
