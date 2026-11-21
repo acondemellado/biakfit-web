@@ -91,7 +91,7 @@
       'beta.mailBody': 'Hola, estoy interesado en probar BiakFit. Avisadme cuando abra la beta.',
       'beta.alt': '¿Dudas o ideas? Escríbenos a', 'beta.copy': 'Copiar', 'beta.copied': 'Copiado',
       'beta.privacy': 'Solo usaremos tu email para avisarte del lanzamiento.',
-      'foot.lema': 'Entrenamos juntos.', 'foot.legal': '© 2026 Alberto Conde Mellado. Hecho en Donostia.', 'foot.privacy': 'Privacidad', 'foot.notice': 'Aviso legal', 'foot.safety': 'Entrena con seguridad', 'beta.more': 'Política de privacidad'
+      'foot.lema': 'Entrenamos juntos.', 'foot.legal': '© 2026 aire78.com. Hecho en Donostia.', 'foot.privacy': 'Privacidad', 'foot.notice': 'Aviso legal', 'foot.safety': 'Entrena con seguridad', 'beta.more': 'Política de privacidad'
     },
     eu: {
       'nav.journey': 'Ibilbidea', 'nav.library': 'Ariketak', 'nav.cta': 'Deskargatu',
@@ -149,7 +149,7 @@
       'beta.alt': 'Zalantzarik edo ideiarik? Idatzi helbide honetara:', 'beta.copy': 'Kopiatu', 'beta.copied': 'Kopiatuta',
       'beta.privacy': 'Zure emaila abiaraztearen berri emateko baino ez dugu erabiliko.',
       'walk.home': 'Etxean!',
-      'foot.lema': 'Elkarrekin entrenatzen dugu.', 'foot.legal': '© 2026 Alberto Conde Mellado. Donostian egina.', 'foot.privacy': 'Pribatutasuna', 'foot.notice': 'Lege-oharra', 'foot.safety': 'Entrenatu seguru', 'beta.more': 'Pribatutasun-politika'
+      'foot.lema': 'Elkarrekin entrenatzen dugu.', 'foot.legal': '© 2026 aire78.com. Donostian egina.', 'foot.privacy': 'Pribatutasuna', 'foot.notice': 'Lege-oharra', 'foot.safety': 'Entrenatu seguru', 'beta.more': 'Pribatutasun-politika'
     },
     en: {
       'nav.journey': 'The journey', 'nav.library': 'Exercises', 'nav.cta': 'Download it',
@@ -206,7 +206,7 @@
       'beta.mailBody': 'Hi, I’m interested in trying BiakFit. Let me know when the beta opens.',
       'beta.alt': 'Questions or ideas? Write to', 'beta.copy': 'Copy', 'beta.copied': 'Copied',
       'beta.privacy': 'We’ll only use your email to tell you about the launch.',
-      'foot.lema': 'Training together.', 'foot.legal': '© 2026 Alberto Conde Mellado. Made in Donostia.', 'foot.privacy': 'Privacy', 'foot.notice': 'Legal notice', 'foot.safety': 'Train safely', 'beta.more': 'Privacy policy'
+      'foot.lema': 'Training together.', 'foot.legal': '© 2026 aire78.com. Made in Donostia.', 'foot.privacy': 'Privacy', 'foot.notice': 'Legal notice', 'foot.safety': 'Train safely', 'beta.more': 'Privacy policy'
     }
   };
 
